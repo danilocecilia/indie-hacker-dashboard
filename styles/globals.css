@@ -380,3 +380,121 @@ tbody td {
   .search-input { width: 100%; }
   .charts-section { grid-template-columns: 1fr; }
 }
+
+/* === Project Row Clickable === */
+.project-row {
+  cursor: pointer;
+}
+.project-row.expanded {
+  background: var(--bg-card-hover);
+}
+.project-founder {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* === Expand Icon === */
+.expand-icon {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+}
+.expand-icon.open {
+  transform: rotate(90deg);
+  color: var(--accent-blue);
+}
+
+/* === Details Row === */
+.details-row td {
+  padding: 0 !important;
+}
+
+/* === Project Details Card === */
+.project-details {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 1.5rem;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; max-height: 0; }
+  to { opacity: 1; max-height: 1000px; }
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.detail-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.detail-section h4,
+.detail-block h4 {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.detail-row {
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 1px;
+  font-weight: 600;
+}
+
+.detail-value {
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* === Detail Blocks (Brasil / Plano) === */
+.detail-block {
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.detail-block.brasil {
+  background: rgba(240, 136, 62, 0.06);
+  border: 1px solid rgba(240, 136, 62, 0.2);
+}
+
+.detail-block.brasil h4 {
+  color: #f0883e;
+}
+
+.detail-block.plano {
+  background: rgba(63, 185, 80, 0.06);
+  border: 1px solid rgba(63, 185, 80, 0.2);
+  margin-bottom: 0;
+}
+
+.detail-block.plano h4 {
+  color: #3fb950;
+}
